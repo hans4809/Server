@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitFiles\\Server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9654569D-004E-4963-80E3-D77626209569}|GameServer\\GameServer.vcxproj|D:\\GitFiles\\Server\\GameServer\\GameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9654569D-004E-4963-80E3-D77626209569}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EB7B1EF-39A7-4625-B281-946CF6BAC2E4}|DummyClient\\DummyClient.vcxproj|D:\\GitFiles\\Server\\DummyClient\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5EB7B1EF-39A7-4625-B281-946CF6BAC2E4}|DummyClient\\DummyClient.vcxproj|solutionrelative:DummyClient\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EB7B1EF-39A7-4625-B281-946CF6BAC2E4}|DummyClient\\DummyClient.vcxproj|D:\\GitFiles\\Server\\DummyClient\\DummyClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5EB7B1EF-39A7-4625-B281-946CF6BAC2E4}|DummyClient\\DummyClient.vcxproj|solutionrelative:DummyClient\\DummyClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\CorePch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\CorePch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\Types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\Types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9654569D-004E-4963-80E3-D77626209569}|GameServer\\GameServer.vcxproj|D:\\GitFiles\\Server\\GameServer\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9654569D-004E-4963-80E3-D77626209569}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\CorePch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EA24878D-BC9D-448D-A345-FEDFAD0B0F2E}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\CorePch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameServer.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\GameServer\\GameServer.cpp",
+              "RelativeDocumentMoniker": "GameServer\\GameServer.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\GameServer\\GameServer.cpp",
+              "RelativeToolTip": "GameServer\\GameServer.cpp",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAowK0AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-11T13:28:24.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Types.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\Types.h",
+              "RelativeDocumentMoniker": "ServerCore\\Types.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\Types.h",
+              "RelativeToolTip": "ServerCore\\Types.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-11T13:28:24.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CorePch.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\CorePch.h",
+              "RelativeDocumentMoniker": "ServerCore\\CorePch.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\CorePch.h",
+              "RelativeToolTip": "ServerCore\\CorePch.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-11T13:28:24.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "pch.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\GameServer\\pch.h",
+              "RelativeDocumentMoniker": "GameServer\\pch.h",
+              "ToolTip": "D:\\GitFiles\\Server\\GameServer\\pch.h",
+              "RelativeToolTip": "GameServer\\pch.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-11T13:28:24.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CorePch.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\CorePch.cpp",
+              "RelativeDocumentMoniker": "ServerCore\\CorePch.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\CorePch.cpp",
+              "RelativeToolTip": "ServerCore\\CorePch.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-11T13:28:24.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "pch.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\pch.h",
+              "RelativeDocumentMoniker": "ServerCore\\pch.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\pch.h",
+              "RelativeToolTip": "ServerCore\\pch.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-11T13:28:24.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DummyClient.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\DummyClient\\DummyClient.cpp",
+              "RelativeDocumentMoniker": "DummyClient\\DummyClient.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\DummyClient\\DummyClient.cpp",
+              "RelativeToolTip": "DummyClient\\DummyClient.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-11T13:28:24.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "pch.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\DummyClient\\pch.h",
+              "RelativeDocumentMoniker": "DummyClient\\pch.h",
+              "ToolTip": "D:\\GitFiles\\Server\\DummyClient\\pch.h",
+              "RelativeToolTip": "DummyClient\\pch.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-11T13:28:24.3Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,9 @@
 #include <thread>
 #include <atomic>
 #include <mutex>
+#include <Windows.h>
 
+#pragma region LockRegion
 //atomic : All-Or-Nothing
 atomic<int32> sum = 0; //병목 현상 일으킬 수 있음
 //Mutual Exclusive (상호베타적)
@@ -14,13 +16,13 @@ mutex m;
 
 // RAII (Resource Acquistion Is Initialization)
 template<typename T>
-class LockGuard 
+class LockGuard
 {
 public:
-    LockGuard(T& m) 
+    LockGuard(T& m)
     {
         _mutex = &m;
-        _mutext->lock();
+        _mutex->lock();
     }
 
     ~LockGuard()
@@ -31,10 +33,10 @@ private:
     T* _mutex;
 };
 
-class SpinLock 
+class SpinLock
 {
 public:
-    void lock() 
+    void lock()
     {
         // CAS (Compare-And-Swap)
         bool expected = false;
@@ -56,6 +58,10 @@ public:
         while (_locked.compare_exchange_strong(expected, desired) == false)
         {
             expected = false;
+
+            //this_thread::sleep_for(std::chrono::milliseconds(100));
+            this_thread::sleep_for(0ms);
+            //this_thread::yield();
         }
 
     }
@@ -67,7 +73,7 @@ public:
 private:
     atomic<bool> _locked = false;
 };
-void HelloThread() 
+void HelloThread()
 {
     m.lock();
 
@@ -75,27 +81,105 @@ void HelloThread()
 
     m.unlock();
 }
+#pragma endregion
 
+
+#pragma region EventRegion
+mutex m1;
+queue<int32> q;
+HANDLE handle;
+
+void Producer() 
+{
+    while (true)
+    {
+        {
+            unique_lock<mutex> lock(m1);
+            q.push(100);
+        }
+
+        ::SetEvent(handle);
+
+        this_thread::sleep_for(10000000ms);
+    }
+}
+
+void Consumer()
+{
+    while (true)
+    {
+		::WaitForSingleObject(handle, INFINITE);
+
+		unique_lock<mutex> lock(m1);
+        if (q.empty() == false)
+        {
+			int32 data = q.front();
+			q.pop();
+            cout << data << endl;
+		}
+	}
+
+}
+#pragma endregion
+
+#pragma region ConditionVariable
+mutex m2;
+queue<int32> q2;
+//참고) cv는 User-Level Object
+condition_variable cv;
+
+void Producer2()
+{
+    while (true)
+    {
+        // 1) Lock을 걸고
+        // 2) 공유 변수 값을 수정
+        // 3) Lock을 풀고
+        // 4) 조건 변수를 통해 다른 쓰레드에게 통지
+        {
+			unique_lock<mutex> lock(m2);
+			q.push(100);
+		}
+
+        cv.notify_one();// wait중인 쓰레드 중 하나를 깨운다.
+	}
+}
+
+void Consumer() 
+{
+    while (true) 
+    {
+        unique_lock<mutex> lock(m2);
+        cv.wait(lock, []() {return q.empty() == false; /*탈출 조건*/});
+        // 1) Lock을 잡고
+        // 2) 조건 확인
+        // 만족 하면 빠져 나와서 이어서 코드를 진행
+        // 만족하지 않으면 Lock을 풀고 대기 상태로 전환
+
+        {
+			int32 data = q.front();
+			q.pop();
+			cout << data << endl;
+		}
+    }
+}
+#pragma endregion
 
 int main()
 {
-    HelloWorld();
-    
-    std::thread t;
+    //커널 오브젝트
+    // Usage Count
+    // Signal(파란 불) / Non-Signal(빨간 불) << bool
+    // Auto/ Manual << bool
+   handle = ::CreateEvent(NULL/*보안 속성*/, FALSE/*bManualReset*/, FALSE/*bInitialState*/, NULL);
 
-    auto id1 = t.get_id();
-    t = std::thread(HelloThread);
+   thread t1(Producer);
+   thread t2(Consumer);
 
-    int32 count = t.hardware_concurrency(); // CPU 코어 개수
-    auto id2 = t.get_id();// 쓰레드마다 id
+   t1.join();
+   t2.join();
 
-    t.detach();// std::thread 객체에서 실제 쓰레드를 분리
-
-    if(t.joinable())
-        t.join();
-
-    cout << "Hello Main" << endl;
-
+   ::CloseHandle(handle);
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
