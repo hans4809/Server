@@ -7,6 +7,7 @@
 #include <atomic>
 #include <mutex>
 #include <Windows.h>
+#include <future>
 
 #pragma region LockRegion
 //atomic : All-Or-Nothing
