@@ -34,14 +34,61 @@ void Pop()
 	}
 }
 
-CoreGlobal Core;
+class TestLock
+{
+	USE_LOCK;
+public:
+	int32 TestRead()
+	{
+		READ_LOCK;
+		
+		if (_queue.empty())
+		{
+			return -1;
+		}
 
-void ThreadMain()
+		return _queue.front();
+	}
+
+	void TestPsuh()
+	{
+		WRITE_LOCK;
+		
+		_queue.push(rand() % 100);
+	}
+
+	void TestPop()
+	{
+		WRITE_LOCK;
+		
+		if (_queue.empty() == false)
+		{
+			_queue.pop();
+		}
+	}
+private:
+	queue<int32> _queue;
+};
+
+TestLock testLock;
+
+void ThreadWrite()
 {
 	while (true)
 	{
-		cout << "Hello! I am thread..." << LThreadId << endl;
-		this_thread::sleep_for(1s);
+		testLock.TestPsuh();
+		this_thread::sleep_for(1ms);
+		testLock.TestPop();
+	}
+}
+
+void ThreadRead()
+{
+	while (true)
+	{
+		int32 value = testLock.TestRead();
+		cout << value << endl;
+		this_thread::sleep_for(1ms);
 	}
 }
 int main()
@@ -56,7 +103,12 @@ int main()
 
 	for(int32 i = 0; i < 5; i++)
 	{
-		GThreadManager->Launch(ThreadMain);
+		GThreadManager->Launch(ThreadWrite);
+	}
+
+	for (int32 i = 0; i < 5; i++)
+	{
+		GThreadManager->Launch(ThreadRead);
 	}
 
 	GThreadManager->Join();
