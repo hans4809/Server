@@ -43,6 +43,7 @@ SourceArt/**/*.tga
 
 # Binary Files
 Binaries/*
+Binary/*
 Plugins/*/Binaries/*
 
 # Builds
@@ -70,3 +71,6 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 Package/*
+
+*.pdb
+*.idb
