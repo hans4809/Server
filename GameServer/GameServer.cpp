@@ -10,6 +10,8 @@
 #include "CoreMacro.h"
 #include "ThreadManager.h"
 
+
+
 LockQueue<int32> q;
 LockFreeStack<int32> s;
 
@@ -91,6 +93,8 @@ void ThreadRead()
 		this_thread::sleep_for(1ms);
 	}
 }
+
+
 int main()
 {
 	thread t1(Push);
