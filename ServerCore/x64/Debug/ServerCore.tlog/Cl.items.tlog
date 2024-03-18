@@ -1,0 +1,7 @@
+C:\GithubFiles\CPP_Server\Server\ServerCore\CoreGlobal.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\CoreGlobal.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\CorePch.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\CorePch.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\CoreTLS.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\CoreTLS.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\DeadLockProfiler.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\DeadLockProfiler.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\Lock.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\Lock.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\pch.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\pch.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\ThreadManager.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\ThreadManager.obj
