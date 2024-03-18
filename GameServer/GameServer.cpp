@@ -9,6 +9,7 @@
 #include "ConcurrentStack.h"
 #include "CoreMacro.h"
 #include "ThreadManager.h"
+#include "Memory.h"
 
 
 
