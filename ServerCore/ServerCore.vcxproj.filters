@@ -8,13 +8,13 @@
       <UniqueIdentifier>{1c94faf8-d38f-44b3-b3f3-39ba3c6951e1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Main">
-      <UniqueIdentifier>{cde0b8b0-e358-48c4-afe9-2caaa0c0ca43}</UniqueIdentifier>
+      <UniqueIdentifier>{c0b75513-7471-4500-a833-2626c5040f9c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Thread">
-      <UniqueIdentifier>{d874e676-dfda-4ccc-8012-31a77da1149a}</UniqueIdentifier>
+      <UniqueIdentifier>{0a8a1a96-3bcc-4f5b-ac25-3388457fad31}</UniqueIdentifier>
     </Filter>
     <Filter Include="Memory">
-      <UniqueIdentifier>{a61e7b2c-0a29-4389-ace2-1e0cafe6eca8}</UniqueIdentifier>
+      <UniqueIdentifier>{903143c9-12f7-436d-8004-490b4f0d31bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,17 +42,17 @@
     <ClInclude Include="Lock.h">
       <Filter>Thread</Filter>
     </ClInclude>
-    <ClInclude Include="RefCounting.h">
-      <Filter>Memory</Filter>
+    <ClInclude Include="DeadLockProfiler.h">
+      <Filter>Thread</Filter>
     </ClInclude>
-    <ClInclude Include="Memory.h">
+    <ClInclude Include="RefCounting.h">
       <Filter>Memory</Filter>
     </ClInclude>
     <ClInclude Include="Allocator.h">
       <Filter>Memory</Filter>
     </ClInclude>
-    <ClInclude Include="DeadLockProfiler.h">
-      <Filter>Thread</Filter>
+    <ClInclude Include="Memory.h">
+      <Filter>Memory</Filter>
     </ClInclude>
     <ClInclude Include="Container.h">
       <Filter>Memory</Filter>
@@ -86,10 +86,10 @@
     <ClCompile Include="RefCounting.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="Memory.cpp">
+    <ClCompile Include="Allocator.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="Allocator.cpp">
+    <ClCompile Include="Memory.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
     <ClCompile Include="MemoryPool.cpp">

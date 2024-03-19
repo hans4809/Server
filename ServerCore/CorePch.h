@@ -2,14 +2,12 @@
 
 #include "Types.h"
 #include "CoreMacro.h"
-#include "CoreGlobal.h"
 #include "CoreTLS.h"
+#include "CoreGlobal.h"
 #include "Container.h"
 
-#include <Windows.h>
-#include "Lock.h"
+#include <windows.h>
 #include <iostream>
 using namespace std;
 
-
-void HelloWorld();
+#include "Lock.h"

@@ -2,6 +2,10 @@
 #include "Memory.h"
 #include "MemoryPool.h"
 
+/*-------------
+	Memory
+---------------*/
+
 Memory::Memory()
 {
 	int32 size = 0;
@@ -18,6 +22,7 @@ Memory::Memory()
 			tableIndex++;
 		}
 	}
+
 	for (; size <= 2048; size += 128)
 	{
 		MemoryPool* pool = new MemoryPool(size);
@@ -45,10 +50,9 @@ Memory::Memory()
 
 Memory::~Memory()
 {
-	for(MemoryPool* pool : _pools)
-	{
+	for (MemoryPool* pool : _pools)
 		delete pool;
-	}
+
 	_pools.clear();
 }
 
@@ -59,11 +63,12 @@ void* Memory::Allocate(int32 size)
 
 	if (allocSize > MAX_ALLOC_SIZE)
 	{
-		//메모리 풀링할 필요가 없음
-		header = reinterpret_cast<MemoryHeader*>(::malloc(allocSize));
+		// 메모리 풀링 최대 크기를 벗어나면 일반 할당
+		header = reinterpret_cast<MemoryHeader*>(::_aligned_malloc(allocSize, SLIST_ALIGNMENT));
 	}
 	else
 	{
+		// 메모리 풀에서 꺼내온다
 		header = _poolTable[allocSize]->Pop();
 	}
 
@@ -73,19 +78,18 @@ void* Memory::Allocate(int32 size)
 void Memory::Release(void* ptr)
 {
 	MemoryHeader* header = MemoryHeader::DetachHeader(ptr);
-	
+
 	const int32 allocSize = header->allocSize;
 	ASSERT_CRASH(allocSize > 0);
 
-	if(allocSize > MAX_ALLOC_SIZE)
+	if (allocSize > MAX_ALLOC_SIZE)
 	{
-		//메모리 풀링 최대 크기를 벗어나면 일반 해제
-		::free(header);
+		// 메모리 풀링 최대 크기를 벗어나면 일반 해제
+		::_aligned_free(header);
 	}
 	else
 	{
-		// 메모리 풀에 반납
+		// 메모리 풀에 반납한다
 		_poolTable[allocSize]->Push(header);
 	}
 }
-

@@ -1,12 +1,12 @@
 #include "pch.h"
 #include "CoreGlobal.h"
 #include "ThreadManager.h"
-#include "DeadLockProfiler.h"
 #include "Memory.h"
+#include "DeadLockProfiler.h"
 
-ThreadManager* GThreadManager = nullptr;
-Memory* GMemory = nullptr;
-DeadLockProfiler* GDeadLockProfiler = nullptr;
+ThreadManager*		GThreadManager = nullptr;
+Memory*				GMemory = nullptr;
+DeadLockProfiler*	GDeadLockProfiler = nullptr;
 
 class CoreGlobal
 {
@@ -17,6 +17,7 @@ public:
 		GMemory = new Memory();
 		GDeadLockProfiler = new DeadLockProfiler();
 	}
+
 	~CoreGlobal()
 	{
 		delete GThreadManager;
