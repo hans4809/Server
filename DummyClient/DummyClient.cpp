@@ -120,52 +120,91 @@ int main()
 	cout << "Connected To Server!" << endl;
 
 	char sendBuffer[100] = "Hello World!";
+
+#pragma region Non-Overlapped
+	// Send
+	//while (true)
+	//{
+	//	if (::send(clientSocket, sendBuffer, sizeof(sendBuffer), 0) == SOCKET_ERROR)
+	//	{
+	//		// 논블로킹으로 해놔서 다시 체크해야댐
+	//		if (::WSAGetLastError() == WSAEWOULDBLOCK)
+	//		{
+	//			continue;
+	//		}
+
+	//		// 에러
+	//		break;
+	//	}
+
+	//	cout << "Send Data! Len = " << sizeof(sendBuffer) << endl;
+	//	
+	//	// Recv
+	//	while (true)
+	//	{
+	//		char recvBuffer[1000];
+	//		int recvLen = ::recv(clientSocket, recvBuffer, sizeof(recvBuffer), 0);
+
+	//		if (recvLen == SOCKET_ERROR)
+	//		{
+	//			// 논블로킹으로 해놔서 다시 체크해야댐
+	//			if (::WSAGetLastError() == WSAEWOULDBLOCK)
+	//			{
+	//				continue;
+	//			}
+
+	//			// 에러
+	//			break;
+	//		}
+	//		else if (recvLen == 0)
+	//		{
+	//			// 연결 끊김
+	//			break;
+	//		}
+
+	//		cout<< "Recv Data! Len = " << recvLen << endl;
+	//		break;
+	//	}
+
+
+	//	this_thread::sleep_for(1s);
+	//}
+#pragma endregion
+
+#pragma region Overlapped
+
+	WSAEVENT wsaEvent = ::WSACreateEvent();
+	WSAOVERLAPPED overlapped = {};
+	overlapped.hEvent = wsaEvent;
 	while (true)
 	{
-		if (::send(clientSocket, sendBuffer, sizeof(sendBuffer), 0) == SOCKET_ERROR)
+		WSABUF wsaBuf;
+		wsaBuf.buf = sendBuffer;
+		wsaBuf.len = 100;
+
+		DWORD sendLen = 0;
+		DWORD flags = 0;
+		if (::WSASend(clientSocket, &wsaBuf, 1, &sendLen, flags, &overlapped, nullptr) == SOCKET_ERROR)
 		{
-			// 논블로킹으로 해놔서 다시 체크해야댐
-			if (::WSAGetLastError() == WSAEWOULDBLOCK)
+			if (::WSAGetLastError() == WSA_IO_PENDING)
 			{
-				continue;
+				//Pending
+				::WSAWaitForMultipleEvents(1, &wsaEvent, TRUE, WSA_INFINITE, FALSE);
+				::WSAGetOverlappedResult(clientSocket, &overlapped, &sendLen, FALSE, &flags);
 			}
-
-			// 에러
-			break;
-		}
-
-		cout << "Send Data! Len = " << sizeof(sendBuffer) << endl;
-		
-		// Recv
-		while (true)
-		{
-			char recvBuffer[1000];
-			int recvLen = ::recv(clientSocket, recvBuffer, sizeof(recvBuffer), 0);
-
-			if (recvLen == SOCKET_ERROR)
+			else
 			{
-				// 논블로킹으로 해놔서 다시 체크해야댐
-				if (::WSAGetLastError() == WSAEWOULDBLOCK)
-				{
-					continue;
-				}
-
-				// 에러
+				// 진짜 문제
 				break;
 			}
-			else if (recvLen == 0)
-			{
-				// 연결 끊김
-				break;
-			}
-
-			cout<< "Recv Data! Len = " << recvLen << endl;
-			break;
 		}
 
+		cout << "Send Data! Len = " << sendLen << endl;
 
-		this_thread::sleep_for(1s);
+		this_thread::sleep_for(1s);	
 	}
+#pragma endregion
+
 #pragma endregion
 
 	
