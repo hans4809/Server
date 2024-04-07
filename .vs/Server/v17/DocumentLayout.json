@@ -7,8 +7,48 @@
       "RelativeMoniker": "D:0:0:{F03FE732-3473-4BBD-94B1-D4916C3B4A15}|GameServer\\GameServer.vcxproj|solutionrelative:GameServer\\GameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB44AE35-8484-4283-B63B-CEAC19CB6242}|DummyClient\\DummyClient.vcxproj|D:\\GitFiles\\Server\\DummyClient\\DummyClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BB44AE35-8484-4283-B63B-CEAC19CB6242}|DummyClient\\DummyClient.vcxproj|solutionrelative:DummyClient\\DummyClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\IOCPCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\IOCPCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\IOCPCore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\IOCPCore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\IOCPEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\IOCPEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\IOCPEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\IOCPEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\Listener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\Listener.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\Listener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\Listener.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\NetAddress.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\NetAddress.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\Session.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\Session.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\Session.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\Session.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\SocketUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\SocketUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|D:\\GitFiles\\Server\\ServerCore\\SocketUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAC2B122-7251-4759-8D77-04CD547B7348}|ServerCore\\ServerCore.vcxproj|solutionrelative:ServerCore\\SocketUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +58,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DummyClient.cpp",
-              "DocumentMoniker": "D:\\GitFiles\\Server\\DummyClient\\DummyClient.cpp",
-              "RelativeDocumentMoniker": "DummyClient\\DummyClient.cpp",
-              "ToolTip": "D:\\GitFiles\\Server\\DummyClient\\DummyClient.cpp",
-              "RelativeToolTip": "DummyClient\\DummyClient.cpp",
-              "ViewState": "AQIAALIAAAAAAAAAAAAgwL0AAAAEAAAA",
+              "Title": "IOCPCore.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\IOCPCore.cpp",
+              "RelativeDocumentMoniker": "ServerCore\\IOCPCore.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\IOCPCore.cpp",
+              "RelativeToolTip": "ServerCore\\IOCPCore.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-01T09:54:01.575Z",
+              "WhenOpened": "2024-04-07T15:13:26.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IOCPCore.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\IOCPCore.h",
+              "RelativeDocumentMoniker": "ServerCore\\IOCPCore.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\IOCPCore.h",
+              "RelativeToolTip": "ServerCore\\IOCPCore.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T15:12:07.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IOCPEvent.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\IOCPEvent.cpp",
+              "RelativeDocumentMoniker": "ServerCore\\IOCPEvent.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\IOCPEvent.cpp",
+              "RelativeToolTip": "ServerCore\\IOCPEvent.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-07T15:12:04.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IOCPEvent.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\IOCPEvent.h",
+              "RelativeDocumentMoniker": "ServerCore\\IOCPEvent.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\IOCPEvent.h",
+              "RelativeToolTip": "ServerCore\\IOCPEvent.h",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T15:11:43.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Listener.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\Listener.cpp",
+              "RelativeDocumentMoniker": "ServerCore\\Listener.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\Listener.cpp",
+              "RelativeToolTip": "ServerCore\\Listener.cpp",
+              "ViewState": "AQIAAE4AAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-07T15:11:30.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Listener.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\Listener.h",
+              "RelativeDocumentMoniker": "ServerCore\\Listener.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\Listener.h",
+              "RelativeToolTip": "ServerCore\\Listener.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T15:11:12.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NetAddress.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\NetAddress.h",
+              "RelativeDocumentMoniker": "ServerCore\\NetAddress.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\NetAddress.h",
+              "RelativeToolTip": "ServerCore\\NetAddress.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T15:11:00.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Session.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\Session.cpp",
+              "RelativeDocumentMoniker": "ServerCore\\Session.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\Session.cpp",
+              "RelativeToolTip": "ServerCore\\Session.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-07T15:10:50.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Session.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\Session.h",
+              "RelativeDocumentMoniker": "ServerCore\\Session.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\Session.h",
+              "RelativeToolTip": "ServerCore\\Session.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T15:10:42.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SocketUtils.cpp",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\SocketUtils.cpp",
+              "RelativeDocumentMoniker": "ServerCore\\SocketUtils.cpp",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\SocketUtils.cpp",
+              "RelativeToolTip": "ServerCore\\SocketUtils.cpp",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-07T15:10:29.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SocketUtils.h",
+              "DocumentMoniker": "D:\\GitFiles\\Server\\ServerCore\\SocketUtils.h",
+              "RelativeDocumentMoniker": "ServerCore\\SocketUtils.h",
+              "ToolTip": "D:\\GitFiles\\Server\\ServerCore\\SocketUtils.h",
+              "RelativeToolTip": "ServerCore\\SocketUtils.h",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T15:10:20.189Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +211,9 @@
               "RelativeDocumentMoniker": "GameServer\\GameServer.cpp",
               "ToolTip": "D:\\GitFiles\\Server\\GameServer\\GameServer.cpp",
               "RelativeToolTip": "GameServer\\GameServer.cpp",
-              "ViewState": "AQIAAMYBAAAAAAAAAAAAAM0BAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAO0CAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-19T15:19:00.907Z",
+              "WhenOpened": "2024-04-07T15:09:32.474Z",
               "EditorCaption": ""
             }
           ]
