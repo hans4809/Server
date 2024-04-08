@@ -16,6 +16,8 @@ public:
 	virtual ~Session();
 
 public:
+
+	void Send(BYTE* buffer, int32 len);
 	void Disconnect(const WCHAR* cause);
 	shared_ptr<Service> GetService() { return _service.lock(); }
 	void SetService(shared_ptr<Service> service) { _service = service; }
@@ -37,11 +39,11 @@ private:
 	// 전송 관련
 	void RegisterConnect();
 	void RegisterRecv();
-	void RegisterSend();
+	void RegisterSend(SendEvent* sendEvent);
 
 	void ProcessConnect();
 	void ProcessRecv(int32 numOfBytes);
-	void ProcessSend(int32 numOfBytes);
+	void ProcessSend(SendEvent* sendEvent, int32 numOfBytes);
 
 	void HandleError(int32 errorCode);
 
@@ -54,8 +56,11 @@ protected:
 
 public:
 	// Temp
-	char _recvBuffer[1000];
+	BYTE _recvBuffer[1000];
 
+	// CircularBuffer;
+	//char _sendBuffer[1000];
+	//int32 _sendLen = 0;
 private:
 	weak_ptr<Service> _service;
 	SOCKET _socket = INVALID_SOCKET;
