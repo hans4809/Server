@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "IOCPEvent.h"
 
-IOCPEvent::IOCPEvent(EventType type) : _type(type)
+IOCPEvent::IOCPEvent(EventType type) : eventType(type)
 {
 	Init();
 }

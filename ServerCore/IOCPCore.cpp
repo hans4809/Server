@@ -2,7 +2,6 @@
 #include "IOCPCore.h"
 #include "IOCPEvent.h"
 
-IOCPCore GIocpCore;
 
 IOCPCore::IOCPCore()
 {
@@ -15,21 +14,21 @@ IOCPCore::~IOCPCore()
 	::CloseHandle(_iocpHandle);
 }
 
-bool IOCPCore::Register(IOCPObject* iocpObject)
+bool IOCPCore::Register(IOCPObjectRef iocpObject)
 {
-	return ::CreateIoCompletionPort(iocpObject->GetHandle(), _iocpHandle, reinterpret_cast<ULONG_PTR>(iocpObject), 0);
+	return ::CreateIoCompletionPort(iocpObject->GetHandle(), _iocpHandle, /*key*/0, 0);
 }
 
 bool IOCPCore::Dispatch(uint32 timeoutMs)
 {
 	DWORD numOfBytes = 0;
-	IOCPObject* iocpObject = nullptr;
+	ULONG_PTR key = 0;
 	IOCPEvent* iocpEvent = nullptr;
 
-	if (::GetQueuedCompletionStatus(_iocpHandle, OUT & numOfBytes, OUT reinterpret_cast<PULONG_PTR>(&iocpObject), OUT reinterpret_cast<LPOVERLAPPED*>(&iocpEvent), timeoutMs))
+	if (::GetQueuedCompletionStatus(_iocpHandle, OUT & numOfBytes, OUT &key, OUT reinterpret_cast<LPOVERLAPPED*>(&iocpEvent), timeoutMs))
 	{
+		IOCPObjectRef iocpObject = iocpEvent->owner;
 		iocpObject->Dispatch(iocpEvent, numOfBytes);
-		return true;
 	}
 	else
 	{
@@ -39,9 +38,10 @@ bool IOCPCore::Dispatch(uint32 timeoutMs)
 		case WAIT_TIMEOUT:
 			return false;
 		default:
+			IOCPObjectRef iocpObject = iocpEvent->owner;
 			iocpObject->Dispatch(iocpEvent, numOfBytes);
 			break;
 		}
 	}
-	return false;
+	return true;
 }

@@ -12,6 +12,7 @@ D:\GitFiles\Server\ServerCore\MemoryPool.cpp;D:\GitFiles\Server\ServerCore\x64\D
 D:\GitFiles\Server\ServerCore\NetAddress.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\NetAddress.obj
 D:\GitFiles\Server\ServerCore\pch.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\pch.obj
 D:\GitFiles\Server\ServerCore\RefCounting.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\RefCounting.obj
+D:\GitFiles\Server\ServerCore\Service.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\Service.obj
 D:\GitFiles\Server\ServerCore\Session.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\Session.obj
 D:\GitFiles\Server\ServerCore\SocketUtils.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\SocketUtils.obj
 D:\GitFiles\Server\ServerCore\ThreadManager.cpp;D:\GitFiles\Server\ServerCore\x64\Debug\ThreadManager.obj

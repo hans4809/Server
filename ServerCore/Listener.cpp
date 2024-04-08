@@ -3,6 +3,7 @@
 #include "SocketUtils.h"
 #include "IOCPEvent.h"
 #include "Session.h"
+#include "Service.h"
 
 Listener::~Listener()
 {
@@ -14,15 +15,21 @@ Listener::~Listener()
 	}
 }
 
-bool Listener::StartAccept(NetAddress netAddress)
+bool Listener::StartAccept(ServerServiceRef service)
 {
+	_service = service;
+	if (_service == nullptr)
+	{
+		return false;
+	}
+
 	_socket = SocketUtils::CreateSocket();
 	if (_socket == INVALID_SOCKET)
 	{
 		return false;
 	}
 
-	if (GIocpCore.Register(this) == false)
+	if (_service->GetIOCPCore()->Register(shared_from_this()) == false)
 	{
 		return false;
 	}
@@ -37,7 +44,7 @@ bool Listener::StartAccept(NetAddress netAddress)
 		return false;
 	}
 
-	if (SocketUtils::Bind(_socket, netAddress) == false)
+	if (SocketUtils::Bind(_socket, _service->GetNetAddress()) == false)
 	{
 		return false;
 	}
@@ -47,15 +54,16 @@ bool Listener::StartAccept(NetAddress netAddress)
 		return false;
 	}
 
-	const int32 MAX_ACCEPT = 10;
-	for(int32 i = 0; i < MAX_ACCEPT; ++i)
+	const int32 acceptCount = _service->GetMaxSessionCount();
+	for(int32 i = 0; i < acceptCount; ++i)
 	{ 
 		AcceptEvent* acceptEvent = Xnew<AcceptEvent>();
+		acceptEvent->owner = shared_from_this();
 		_acceptEvents.push_back(acceptEvent);
 		RegisterAccept(acceptEvent);
 	}
 	
-	return false;
+	return true;
 }
 
 void Listener::CloseSocket()
@@ -70,7 +78,7 @@ HANDLE Listener::GetHandle()
 
 void Listener::Dispatch(IOCPEvent* iocpEvent, int32 numOfBytes)
 {
-	ASSERT_CRASH(iocpEvent->GetType() == EventType::Accept);
+	ASSERT_CRASH(iocpEvent->eventType == EventType::Accept);
 
 	AcceptEvent* acceptEvent = static_cast<AcceptEvent*>(iocpEvent);
 	ProcessAccept(acceptEvent);
@@ -78,9 +86,9 @@ void Listener::Dispatch(IOCPEvent* iocpEvent, int32 numOfBytes)
 
 void Listener::RegisterAccept(AcceptEvent* acceptEvent)
 {
-	Session* session = Xnew<Session>();
+	SessionRef session = _service->CreateSession();	// Register IOCP
 	acceptEvent->Init();
-	acceptEvent->SetSession(session);
+	acceptEvent->session = session;
 
 	DWORD bytesReceived = 0;
 	if (false == SocketUtils::AcceptEx(_socket, session->GetSocket(), session->_recvBuffer, 0,
@@ -97,7 +105,7 @@ void Listener::RegisterAccept(AcceptEvent* acceptEvent)
 
 void Listener::ProcessAccept(AcceptEvent* acceptEvent)
 {
-	Session* session = acceptEvent->GetSession();
+	SessionRef session = acceptEvent->session;
 	
 	if (false == SocketUtils::SetUpdateAcceptSocket(session->GetSocket(), _socket))
 	{
@@ -114,8 +122,6 @@ void Listener::ProcessAccept(AcceptEvent* acceptEvent)
 	}
 
 	session->SetNetAddress(NetAddress(sockAddress));
-
-	cout << "Client Connected : " << endl;
+	session->ProcessConnect();
 	RegisterAccept(acceptEvent);
-
 }
