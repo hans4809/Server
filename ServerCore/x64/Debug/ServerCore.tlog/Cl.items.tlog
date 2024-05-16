@@ -13,6 +13,7 @@ C:\GithubFiles\CPP_Server\Server\ServerCore\NetAddress.cpp;C:\GithubFiles\CPP_Se
 C:\GithubFiles\CPP_Server\Server\ServerCore\pch.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\pch.obj
 C:\GithubFiles\CPP_Server\Server\ServerCore\RecvBuffer.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\RecvBuffer.obj
 C:\GithubFiles\CPP_Server\Server\ServerCore\RefCounting.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\RefCounting.obj
+C:\GithubFiles\CPP_Server\Server\ServerCore\SendBuffer.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\SendBuffer.obj
 C:\GithubFiles\CPP_Server\Server\ServerCore\Service.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\Service.obj
 C:\GithubFiles\CPP_Server\Server\ServerCore\Session.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\Session.obj
 C:\GithubFiles\CPP_Server\Server\ServerCore\SocketUtils.cpp;C:\GithubFiles\CPP_Server\Server\ServerCore\x64\Debug\SocketUtils.obj
