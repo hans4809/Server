@@ -1,4 +1,5 @@
-﻿  GameServer.cpp
+﻿  pch.cpp
+  GameServer.cpp
   GameSession.cpp
   GameSessionManager.cpp
   코드를 생성하고 있습니다...
