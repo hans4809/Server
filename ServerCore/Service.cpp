@@ -82,21 +82,15 @@ ServerService::~ServerService()
 bool ServerService::Start()
 {
 	if (CanStart() == false)
-	{
 		return false;
-	}
 
 	_listener = MakeShared<Listener>();
 	if (_listener == nullptr)
-	{
 		return false;
-	}
 
 	ServerServiceRef service = static_pointer_cast<ServerService>(shared_from_this());
 	if (_listener->StartAccept(service) == false)
-	{
 		return false;
-	}
 
 	return true;
 }

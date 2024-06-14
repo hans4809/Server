@@ -25,34 +25,22 @@ bool Listener::StartAccept(ServerServiceRef service)
 
 	_socket = SocketUtils::CreateSocket();
 	if (_socket == INVALID_SOCKET)
-	{
 		return false;
-	}
 
 	if (_service->GetIOCPCore()->Register(shared_from_this()) == false)
-	{
 		return false;
-	}
 
 	if (SocketUtils::SetReuseAddress(_socket, true) == false)
-	{
 		return false;
-	}
 
 	if (SocketUtils::SetLinger(_socket, 0, 0) == false)
-	{
 		return false;
-	}
 
 	if (SocketUtils::Bind(_socket, _service->GetNetAddress()) == false)
-	{
 		return false;
-	}
 
 	if (SocketUtils::Listen(_socket) == false)
-	{
 		return false;
-	}
 
 	const int32 acceptCount = _service->GetMaxSessionCount();
 	for(int32 i = 0; i < acceptCount; ++i)
