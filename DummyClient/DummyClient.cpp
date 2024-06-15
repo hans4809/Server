@@ -3,6 +3,7 @@
 #include "Service.h"
 #include "Session.h"
 #include "BufferReader.h"
+#include "ClientPacketHandler.h"
 //#include <winsock2.h>
 //#include <mswsock.h>
 //#include <ws2tcpip.h>
@@ -28,25 +29,9 @@ public:
 		//cout << "Connected to Server" << endl;
 	}
 
-	virtual int32 OnRecvPacket(BYTE* buffer, int32 len) override
+	virtual void OnRecvPacket(BYTE* buffer, int32 len) override
 	{
-		BufferReader br(buffer, len);
-
-		PacketHeader header;
-		br >> header;
-
-		uint64 id;
-		uint32 hp;
-		uint16 attack;
-		br >> id >> hp >> attack;
-
-		cout << "ID = " << id << " HP : " << hp << " Attack : " << attack << endl;
-		
-		char recvBuffer[4096];
-		br.Read(recvBuffer, header.size - sizeof(PacketHeader) - 8 - 4 - 2);
-		cout << recvBuffer << endl;
-
-		return len;
+		ClientPacketHandler::HandlePacket(buffer, len);
 	}
 
 	virtual void OnSend(int32 len) override
@@ -145,7 +130,7 @@ int main()
 		NetAddress(L"127.0.0.1", 7777),
 		MakeShared<IOCPCore>(),
 		MakeShared<ServerSession>,
-		1000
+		1
 	);
 
 	ASSERT_CRASH(service->Start());

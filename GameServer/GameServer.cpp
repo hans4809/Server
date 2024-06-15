@@ -11,6 +11,7 @@
 #include "GameSession.h"
 #include "GameSessionManager.h"
 #include "BufferrWriter.h"
+#include "ServerPacketHandler.h"
 #pragma region ServerTest
 	//void HandleError(const char* cause)
 	//{
@@ -777,20 +778,8 @@ int main()
 
 	while (true)
 	{
-		SendBufferRef sendBuffer = GSendBufferManager->Open(4096);
-
-		BufferWriter bw(sendBuffer->Buffer(), sendBuffer->AllocSize());
-
-		PacketHeader* header = bw.Reserve<PacketHeader>();
-
-		// id((uint64), HP(uint32), Attack(uint16)
-		bw << (uint64)1001 << (uint32)100 << (uint16)10;
-		bw.Write(sendData, sizeof(sendData));
-
-		header->size = bw.WriteSize();
-		header->id = 1;
-
-		sendBuffer->Close(bw.WriteSize());
+		vector<BuffData> buffs{ BuffData {100, 1.5f}, BuffData {200, 2.3f}, BuffData {300, 0.7f} };
+		SendBufferRef sendBuffer = ServerPacketHandler::Make_S_TEST(1001, 100, 10, buffs);
 
 		GSessionManager.BroadCast(sendBuffer);
 
