@@ -751,6 +751,7 @@
 #pragma endregion
 
 
+// 패킷 직렬화(Serialization)
 
 int main()
 {
