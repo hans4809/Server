@@ -7,6 +7,9 @@
     <List name="buffs" desc="">
       <Field name="buffID" type="uint64" desc=""/>
       <Field name="remainTime" type="float" desc=""/>
+      <List name="victims" desc="">
+        <Field name="victimID" type="uint64" desc=""/>
+      </List>"
     </List>
   </Packet>
 </PDL>
