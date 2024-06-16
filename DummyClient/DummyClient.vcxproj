@@ -84,8 +84,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)ServerCore\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Libraries\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Libraries\Includes;$(SolutionDir)ServerCore\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Libraries\Libs\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -158,10 +158,14 @@
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Protocol.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientPacketHandler.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Protocol.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="PacketDefinitionList.xml" />
