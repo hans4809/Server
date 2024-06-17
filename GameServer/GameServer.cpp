@@ -8,9 +8,16 @@
 #include "ClientPacketHandler.h"
 #include <tchar.h>
 #include "Protocol.pb.h"
+#include "Job.h"
+#include "Room.h"
 
 int main()
 {
+	//TEST JOB
+	{
+
+	}
+	//JOB
 	ClientPacketHandler::Init();
 
 	ServerServiceRef service = MakeShared<ServerService>(
@@ -31,6 +38,12 @@ int main()
 				}				
 			});
 	}	
+
+	while (true)
+	{
+		GRoom.FlushJobs();
+		this_thread::sleep_for(1ms);
+	}
 
 	GThreadManager->Join();
 }
