@@ -8,9 +8,9 @@
 
 ThreadManager*		GThreadManager = nullptr;
 Memory*				GMemory = nullptr;
-SendBufferManager*  GSendBufferManager = nullptr;
-DeadLockProfiler*	GDeadLockProfiler = nullptr;
+SendBufferManager*	GSendBufferManager = nullptr;
 
+DeadLockProfiler*	GDeadLockProfiler = nullptr;
 
 class CoreGlobal
 {

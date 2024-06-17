@@ -3,9 +3,14 @@
 #include "Session.h"
 #include "Listener.h"
 
-Service::Service(ServiceType type, NetAddress address, IOCPCoreRef core, SessionFactory factory, int32 maxSessionCount)
+/*-------------
+	Service
+--------------*/
+
+Service::Service(ServiceType type, NetAddress address, IocpCoreRef core, SessionFactory factory, int32 maxSessionCount)
 	: _type(type), _netAddress(address), _iocpCore(core), _sessionFactory(factory), _maxSessionCount(maxSessionCount)
 {
+
 }
 
 Service::~Service()
@@ -17,15 +22,22 @@ void Service::CloseService()
 	// TODO
 }
 
+void Service::Broadcast(SendBufferRef sendBuffer)
+{
+	WRITE_LOCK;
+	for (const auto& session : _sessions)
+	{
+		session->Send(sendBuffer);
+	}
+}
+
 SessionRef Service::CreateSession()
 {
 	SessionRef session = _sessionFactory();
 	session->SetService(shared_from_this());
 
 	if (_iocpCore->Register(session) == false)
-	{
 		return nullptr;
-	}
 
 	return session;
 }
@@ -44,12 +56,12 @@ void Service::ReleaseSession(SessionRef session)
 	_sessionCount--;
 }
 
-ClientService::ClientService(NetAddress targetaddress, IOCPCoreRef core, SessionFactory factory, int32 maxSessionCount)
-	: Service(ServiceType::Client, targetaddress, core, factory, maxSessionCount)
-{
-}
+/*-----------------
+	ClientService
+------------------*/
 
-ClientService::~ClientService()
+ClientService::ClientService(NetAddress targetAddress, IocpCoreRef core, SessionFactory factory, int32 maxSessionCount)
+	: Service(ServiceType::Client, targetAddress, core, factory, maxSessionCount)
 {
 }
 
@@ -63,19 +75,14 @@ bool ClientService::Start()
 	{
 		SessionRef session = CreateSession();
 		if (session->Connect() == false)
-		{
 			return false;
-		}
 	}
+
 	return true;
 }
 
-ServerService::ServerService(NetAddress address, IOCPCoreRef core, SessionFactory factory, int32 maxSessionCount)
+ServerService::ServerService(NetAddress address, IocpCoreRef core, SessionFactory factory, int32 maxSessionCount)
 	: Service(ServiceType::Server, address, core, factory, maxSessionCount)
-{
-}
-
-ServerService::~ServerService()
 {
 }
 
@@ -97,5 +104,7 @@ bool ServerService::Start()
 
 void ServerService::CloseService()
 {
+	// TODO
+
 	Service::CloseService();
 }

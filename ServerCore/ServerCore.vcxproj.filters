@@ -72,10 +72,10 @@
     <ClInclude Include="SocketUtils.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="IOCPCore.h">
+    <ClInclude Include="IocpCore.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="IOCPEvent.h">
+    <ClInclude Include="IocpEvent.h">
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Listener.h">
@@ -93,7 +93,7 @@
     <ClInclude Include="SendBuffer.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="BufferrWriter.h">
+    <ClInclude Include="BufferWriter.h">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="BufferReader.h">
@@ -140,10 +140,10 @@
     <ClCompile Include="SocketUtils.cpp">
       <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="IOCPCore.cpp">
+    <ClCompile Include="IocpCore.cpp">
       <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="IOCPEvent.cpp">
+    <ClCompile Include="IocpEvent.cpp">
       <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Listener.cpp">
@@ -164,7 +164,7 @@
     <ClCompile Include="BufferReader.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="BufferrWriter.cpp">
+    <ClCompile Include="BufferWriter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
