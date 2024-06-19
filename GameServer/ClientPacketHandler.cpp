@@ -71,14 +71,15 @@ bool Handle_C_ENTER_GAME(PacketSessionRef& session, Protocol::C_ENTER_GAME& pkt)
 	uint64 index = pkt.playerindex();
 	// TODO : Validation
 
-	PlayerRef player = gameSession->_players[index]; // READ_ONLY?
-	//GRoom.PushJob(MakeShared<EnterJob>(GRoom, player));
-	GRoom.PushJob(&Room::Enter, player);
+	gameSession->_currentPlayer = gameSession->_players[index]; // READ_ONLY?
+	gameSession->_room = GRoom;
+
+	GRoom->DoAsync(&Room::Enter, gameSession->_currentPlayer);
 
 	Protocol::S_ENTER_GAME enterGamePkt;
 	enterGamePkt.set_success(true);
 	auto sendBuffer = ClientPacketHandler::MakeSendBuffer(enterGamePkt);
-	player->ownerSession->Send(sendBuffer);
+	gameSession->_currentPlayer->ownerSession->Send(sendBuffer);
 
 	return true;
 }
@@ -91,8 +92,7 @@ bool Handle_C_CHAT(PacketSessionRef& session, Protocol::C_CHAT& pkt)
 	chatPkt.set_msg(pkt.msg());
 	auto sendBuffer = ClientPacketHandler::MakeSendBuffer(chatPkt);
 
-	//GRoom.PushJob(MakeShared<BroadcastJob>(GRoom, sendBuffer));
-	GRoom.PushJob(&Room::Broadcast, sendBuffer);
+	GRoom->DoAsync(&Room::Broadcast, sendBuffer);
 
 	return true;
 }
