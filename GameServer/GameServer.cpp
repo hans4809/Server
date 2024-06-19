@@ -12,6 +12,7 @@
 #include "Room.h"
 #include "Player.h"
 #include "DBConnectionPool.h"
+#include "DBBind.h"
 
 enum
 {
@@ -63,7 +64,7 @@ int main()
 		int32 gold = 100;
 		SQLLEN len = 0;
 
-		ASSERT_CRASH(dbConnection->BindParam(1, SQL_C_LONG, SQL_INTEGER, sizeof(gold), &gold, &len));
+		ASSERT_CRASH(dbConnection->BindParam(1, &gold, &len));
 
 		ASSERT_CRASH(dbConnection->Execute(L"INSERT INTO [dbo].[Gold] ([gold]) VALUES (?)"));
 		GDBConnectionPool->Push(dbConnection);
@@ -76,15 +77,15 @@ int main()
 
 		int32 gold = 100;
 		SQLLEN len = 0;
-		ASSERT_CRASH(dbConnection->BindParam(1, SQL_C_LONG, SQL_INTEGER, sizeof(gold), &gold, &len));
+		ASSERT_CRASH(dbConnection->BindParam(1, &gold, &len));
 
 		int32 outID = 0;
 		SQLLEN outIDLen = 0;
-		ASSERT_CRASH(dbConnection->BindColumn(1, SQL_C_LONG, sizeof(outID), &outID, &outIDLen));
+		ASSERT_CRASH(dbConnection->BindColumn(1,&outID, &outIDLen));
 
 		int32 outGold = 0;
 		SQLLEN outGoldLen = 0;
-		ASSERT_CRASH(dbConnection->BindColumn(2, SQL_C_LONG, sizeof(outGold), &outGold, &outGoldLen));
+		ASSERT_CRASH(dbConnection->BindColumn(2, &outGold, &outGoldLen));
 
 		ASSERT_CRASH(dbConnection->Execute(L"SELECT * FROM [dbo].[Gold] WHERE gold = (?)"));
 	
