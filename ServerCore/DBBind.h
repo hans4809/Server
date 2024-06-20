@@ -44,54 +44,54 @@ public:
 	template<typename T>
 	void BindParam(int32 index, T* value)
 	{
-		ASSERT_CRASH(_dbConnection.BindParam(index + 1, &value, &_paramIndex[index]));
+		_dbConnection.BindParam(index + 1, &value, &_paramIndex[index]);
 		_paramFlag |= (1LL << index);
 	}
 
 	void BindParam(int32 index, const WCHAR* value)
 	{
-		ASSERT_CRASH(_dbConnection.BindParam(index + 1, value, &_paramIndex[index]));
+		_dbConnection.BindParam(index + 1, value, &_paramIndex[index]);
 		_paramFlag |= (1LL << index);
 	}
 
 	template<typename T, int32 N>
 	void BindParam(int32 index, T(&value)[N])
 	{
-		ASSERT_CRASH(_dbConnection.BindParam(index + 1, (const BYTE*)value, size32(T) * N, & _paramIndex[index]));
+		_dbConnection.BindParam(index + 1, (const BYTE*)value, size32(T) * N, & _paramIndex[index]);
 		_paramFlag |= (1LL << index);
 	}
 
 	template<typename T>
 	void BindParam(int32 index, T* value, int32 N)
 	{
-		ASSERT_CRASH(_dbConnection.BindParam(index + 1, (const BYTE*)value, size32(T) * N, &_columnIndex[index]));
+		_dbConnection.BindParam(index + 1, (const BYTE*)value, size32(T) * N, &_columnIndex[index]);
 		_paramFlag |= (1LL << index);
 	}
 
 	template<typename T>
 	void BindColumn(int32 index, T& value)
 	{
-		ASSERT_CRASH(_dbConnection.BindColumn(index + 1, value, &_columnIndex[index]));
+		_dbConnection.BindColumn(index + 1, &value, &_columnIndex[index]);
 		_columnFlag |= (1LL << index);
 	}
 
 	template<int32 N>
 	void BindColumn(int32 index, WCHAR(&value)[N])
 	{
-		ASSERT_CRASH(_dbConnection.BindColumn(index + 1, value, N - 1, &_columnIndex[index]));
+		_dbConnection.BindColumn(index + 1, value, N - 1, &_columnIndex[index]);
 		_columnFlag |= (1LL << index);
 	}
 
 	void BindColumn(int32 index, WCHAR* value, int32 len)
 	{
-		ASSERT_CRASH(_dbConnection.BindColumn(index + 1, value, len - 1, &_columnIndex[index]));
+		_dbConnection.BindColumn(index + 1, value, len - 1, &_columnIndex[index]);
 		_columnFlag |= (1LL << index);
 	}
 
 	template<typename T, int32 N>
 	void BindColumn(int32 index, T(&value)[N])
 	{
-		ASSERT_CRASH(_dbConnection.BindColumn(index + 1, value, size32(T) * N, &_columnIndex[index]));
+		_dbConnection.BindColumn(index + 1, value, size32(T) * N, &_columnIndex[index]);
 		_columnFlag |= (1LL << index);
 	}
 protected:

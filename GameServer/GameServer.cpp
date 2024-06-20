@@ -14,6 +14,7 @@
 #include "DBConnectionPool.h"
 #include "DBBind.h"
 #include "XMLParser.h"
+#include "DBSynchronizer.h"
 
 enum
 {

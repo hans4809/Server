@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameSession" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAFgAABABAAAgIAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSession.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSessionManager" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAACAAAAAAAAABAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientPacketHandler" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAA=</HashCode>
+      <FileName>ClientPacketHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAABEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Room.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::C_CHAT" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAGlCrAEwAAADIIAAAJRAIASIQgBIBBAgg=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::C_ENTER_GAME" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACJAYAAAAAAGFipAAwAAALIAAAABBAIASAAgBAFBAAA=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::C_LOGIN" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAGFCpAAwEAADIAAAABBAIASAAghABBAAA=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::S_CHAT" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAA4IgAAAAAGlCrAFwAADDIAAAAJRAIASIQgBIBBAgg=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::S_ENTER_GAME" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAABAQAGFCpAAwCAADIAAAABBAIAaAAgBABBAAQ=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::S_LOGIN" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAABAAAmFCpBAwACADIAAAADBAJAaAAgBADJgCQ=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Protocol::Player" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIMAQAEAAGFKpAAwIAgDIEBAANDAIASIIwDQBBIlA=</HashCode>
+      <FileName>Struct.pb.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="google::protobuf::internal::AnyMetadata" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\GitFiles\Server\Libraries\Include\google\protobuf\any.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TableStruct_Enum_2eproto" Collapsed="true">
+    <Position X="4.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAACAAAABAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum.pb.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="is_proto_enum&lt;::Protocol::PlayerType&gt;" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum.pb.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TableStruct_Protocol_2eproto" Collapsed="true">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAACAAAABAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol.pb.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TableStruct_Struct_2eproto" Collapsed="true">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAACAAAABAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Struct.pb.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::C_LOGINDefaultTypeInternal" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::S_LOGINDefaultTypeInternal" Collapsed="true">
+    <Position X="9.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Protocol.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::C_ENTER_GAMEDefaultTypeInternal" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Protocol.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::S_ENTER_GAMEDefaultTypeInternal" Collapsed="true">
+    <Position X="8" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCA=</HashCode>
+      <FileName>Protocol.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::C_CHATDefaultTypeInternal" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::S_CHATDefaultTypeInternal" Collapsed="true">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAACAAAA=</HashCode>
+      <FileName>Protocol.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Protocol::PlayerDefaultTypeInternal" Collapsed="true">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Struct.pb.cc</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="__unnamed_enum_0445_1" Collapsed="true">
+    <Position X="6.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameServer.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0442_1" Collapsed="true">
+    <Position X="4.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAAAAAIAAAAQAAAAAAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>ClientPacketHandler.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Protocol::PlayerType" Collapsed="true">
+    <Position X="8" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAAAAAAAAAAAAAhACAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum.pb.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
